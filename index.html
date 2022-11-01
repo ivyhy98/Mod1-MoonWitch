@@ -5,13 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="./js/script.js" type="module"></script>
+
     <title>Animations</title>
 </head>
 <body>
-    <div id="home-screen" class="hide">
-        
+    <div id="home-screen" class="home">
+        <h2 style="color:white;">Welcome to the Purple Reign Create your avatar!</h2>
+        <form name="heroForm">
+            <div id="name-div">
+                <label for="hero-name">What's your name? </label>
+                <br>
+                <input type="text" name="hero" id="hero-name" required>
+            </div>
+            <div id="select-div">
+                <legend>Choose Your Character</legend>
+                <div class="characters">
+                    <div class="fire-hero">
+                        <img src="./images/FireHero/fire-hero_face.png" alt="">
+                        <input type="radio" name="hero-player" value="fire" checked>
+                        <label for="fire">Fire</label>
+                    </div>
+                    <div class="water-hero">
+                        <img src="./images/WaterHero/water-hero_face.png" alt="">
+                        <input type="radio" name="hero-player" value="water">
+                        <label for="water">Water</label>
+                    </div>
+                    <div class="earth-hero">
+                        <img src="./images/EarthHero/earth-hero_face.png" alt="">
+                        <input type="radio" name="hero-player" value="earth">
+                        <label for="earth">Earth</label>
+                    </div>
+                    <div class="metal-hero">
+                        <img src="./images/MetalHero/metal-hero_face.png" alt="">
+                        <input type="radio" name="hero-player" value="metal">
+                        <label for="metal">Metal</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button type="submit">Start Game</button>
     </div>
-    <canvas id="canvas1"></canvas>
-    <script src="./js/animation.js" type="module"></script>
+    <canvas id="canvas1" class="hide"></canvas>
 </body>
 </html>

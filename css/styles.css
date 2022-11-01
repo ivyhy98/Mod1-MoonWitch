@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -7,14 +11,67 @@ body{
 
 #canvas1{
     border: 5px solid black;
-    height: 500px;
-    width: 600px;
+    height: 600px;
+    width: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-#home-screen{
+.home{
     height: 100vh;
     width: 100vw;
+    background-image: url('../images/backgrounds/background-home.jpg');
+    
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
+#home-screen > h2{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#name-div{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+#select-div{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+.characters{
+    display: flex;
+}
+
+.characters > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+.characters>div:hover{
+    border: 3px solid black;
+}
+button{
+    height: 10%;
+    width: 35%;
+    background-color:blueviolet;
+    color: white;
+    align-self: center;
+}
 .hide{
     display: none;
 }
