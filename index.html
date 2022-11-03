@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
     <script defer src="./js/script.js" type="module"></script>
-
+    <script defer src="./js/levels.js" type="module"></script>
+    <script defer src="./js/inputs.js" type="module"></script>
+    <script defer src="./js/characters.js" type="module"></script>
     <title>Animations</title>
 </head>
 <body>
-    <div id="home-screen" class="home">
+    <div id="home-screen" class="home hide">
         <h2 style="color:white;">Welcome to the Purple Reign Create your avatar!</h2>
         <form name="heroForm">
             <div id="name-div">
-                <label for="hero-name">What's your name? </label>
+                <label for="hero-name" style="font-size: 20px; color: red;">What's your name? </label>
                 <br>
                 <input type="text" name="hero" id="hero-name" required>
             </div>
@@ -46,6 +48,17 @@
         </form>
         <button type="submit">Start Game</button>
     </div>
-    <canvas id="canvas1" class="hide"></canvas>
+    <h1 class="story"></h1>
+    <canvas id="canvas-text" class=""></canvas>
+    <canvas id="canvas1" class=""></canvas>
+    <img class="hide" src="./images/FireHero/fire-hero.png" alt="">
+    <img class="hide" src="./images/EarthHero/earth-hero.png" alt="">
+    <img class="hide" src="./images/WaterHero/water-hero.png" alt="">
+    <img class="hide" src="./images/MetalHero/metal-hero.png" alt="">
+
+
+    <div id="load-screen" class="">
+        <h1>Loading....</h1>
+    </div>
 </body>
 </html>
