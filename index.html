@@ -8,11 +8,11 @@
     <script defer src="./js/script.js" type="module"></script>
     <script defer src="./js/levels.js" type="module"></script>
     <script defer src="./js/inputs.js" type="module"></script>
-    <script defer src="./js/characters.js" type="module"></script>
+    <script defer src="./js/player.js" type="module"></script>
     <title>Animations</title>
 </head>
 <body>
-    <div id="home-screen" class="home hide">
+    <div id="home-screen" class="home">
         <h2 style="color:white;">Welcome to the Purple Reign Create your avatar!</h2>
         <form name="heroForm">
             <div id="name-div">
@@ -48,17 +48,23 @@
         </form>
         <button type="submit">Start Game</button>
     </div>
-    <h1 class="story"></h1>
-    <canvas id="canvas-text" class=""></canvas>
-    <canvas id="canvas1" class=""></canvas>
+    <div class="game-board hide">
+        <div id="canvas-text" class="">
+            <h3 class="text"></h3>
+        </div>
+        <canvas id="canvas1" class=""></canvas>
+    </div>
     <img class="hide" src="./images/FireHero/fire-hero.png" alt="">
     <img class="hide" src="./images/EarthHero/earth-hero.png" alt="">
     <img class="hide" src="./images/WaterHero/water-hero.png" alt="">
     <img class="hide" src="./images/MetalHero/metal-hero.png" alt="">
+    <img class="hide" src="./images/enemies/skeleton.png" alt="">
+    <img class="hide"src="./images/backgrounds/secondBackground.png" alt="">
 
-
-    <div id="load-screen" class="">
-        <h1>Loading....</h1>
+    <div class="death-screen hide">
+        <h2>You Have Died</h2>
+        <button id="start-over">Start Over</button>
+        <button id="restart">Restart Level</button>
     </div>
 </body>
 </html>

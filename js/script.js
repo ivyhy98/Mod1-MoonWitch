@@ -1,50 +1,55 @@
-import { Player } from "./characters.js";
+import { Player } from "./player.js";
 import { InputHandler } from "./inputs.js";
-import { level1 } from "./levels.js";
+import { level1, level2, level3 } from "./levels.js";
+
 export  let ctx= {};
+let ctx2;
 //DOM Queries
 const homeScreen = document.querySelector('#home-screen');
 const form = document.querySelector('form');
 const canvas1 = document.querySelector('#canvas1');
+const canvasText = document.querySelector('#canvas-text');
 const submitButton = document.querySelector('button');
-const loadScreen = document.querySelector('#load-screen');
+//const loadScreen = document.querySelector('.load-screen');
+const text = document.querySelector('.text');
+const startOver = document.querySelector("#start-over");
+const restart = document.querySelector("#restart");
+const deathScreen = document.querySelector(".death-screen");
+const gameBoard = document.querySelector('.game-board');
 
 let playerName;
 let playerCharacter;
-window.addEventListener('load',()=>{
-    loadScreen.classList.add('hide');
-    game.start();
-})
+// window.addEventListener('load',()=>{
+//     loadScreen.classList.add('hide');
+// })
 let x = 0;
 export const game ={
     player: {},
+    levels: [level1,level2,level3],
     currentLevel: {},
     inputs: new InputHandler(),
+    headerText: ["It's finally time to escape this hellish life...", "They say no one ever leaves the Purple's Reign...","Not until today"],
     start: function(name, character){
         ctx = canvas1.getContext("2d");
+        //hide Homescreen and show our canvas
         homeScreen.classList.add("hide");
-        canvas1.classList.remove("hide");
+        canvasText.classList.remove('hide');
+        gameBoard.classList.remove('hide');
+        canvas1.classList.remove('hide')
+        //set width and height proportionate to sprites
         canvas1.width = 600;
         canvas1.height = 400;
-        let shop = new Image();
-      
-        const player = new Player(name, character);
-        this.player = player;
-        
-        this.currentLevel = level1;
-        let background = new Image();
-        background.src = '../images/backgrounds/secondBackground.png'
-        function animate(){
-            ctx.clearRect(0,0,canvas1.width, canvas1.height);
-            ctx.drawImage(background,0,0);
-            ctx.drawImage(shop, 300,260);
-            player.draw(ctx);
-            player.update();
-            requestAnimationFrame(animate);
-        }
-        animate();
+        //set this player to player created
+         const player = new Player(name, character);
+         this.player = player;
+        level1.start(ctx);
     },
-    
+    changeLevel(current,ctx){
+        this.currentLevel = this.levels[current + 1];
+        ctx = null;
+        ctx = canvas1.getContext('2d');
+        this.currentLevel.start(ctx);
+    }
 }
 
 //Validate hero inputs from home page
@@ -57,3 +62,17 @@ function validateHero(){
         game.start(form.elements['hero-name'].value , form.elements['hero-player'].value);
     }
 }
+
+startOver.addEventListener('click',()=>{
+    homeScreen.classList.remove('hide');
+    canvas1.classList.add('hide');
+    deathScreen.classList.add('hide');
+    canvasText.classList.add('hide');
+    ctx = null;
+    game.player = {};
+})
+
+restart.addEventListener('click',()=>{
+    deathScreen.classList.add("hide");
+    game.currentLevel.start(ctx);
+})
