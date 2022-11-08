@@ -8,7 +8,7 @@ export const level1 = {
   start(ctx){
     game.currentLevel = game.levels[0];
     let background = new Image();
-    background.src = '/images/backgrounds/firstBackground.png' 
+    background.src = './images/backgrounds/firstBackground.png' 
     this.drawText(ctx);
     function animate(){
       if(game.currentLevel == level1){
@@ -44,7 +44,7 @@ export const level1 = {
 // ======LEVEL 2 =====
 
 export const level2 = {
-  background: "../images/backgrounds/secondBackground.png",
+  background: "./images/backgrounds/secondBackground.png",
   battleEnded: false,
   start: function (ctx) {
     const image = new Image();
@@ -123,7 +123,7 @@ export const level2 = {
 // ======LEVEL 3 =====
 
 export const level3 = {
-  background: "../images/backgrounds/secondBackground.png",
+  background: "./images/backgrounds/secondBackground.png",
   strangerStart: false,
   enemy: {},
   start: function(ctx) {
@@ -214,7 +214,7 @@ export const level3 = {
 
 // ======LEVEL 4 =====
 export const level4 = {
-  background: "../images/backgrounds/thirdBackground.jpg",
+  background: "./images/backgrounds/thirdBackground.jpg",
   strangerStart: false,
   start: function (ctx) {
     const image = new Image();
