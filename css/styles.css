@@ -72,6 +72,22 @@ form{
     text-align: center;
     margin-top: 10px;
 }
+.load-screen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.tbc{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 #name-div{
     display: flex;
@@ -110,11 +126,23 @@ button{
     display: none;
 }
 
-.load-screen {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-content: center ;
-    justify-content: center;
+
+
+.instructions{
+    color: red;
 }
+
+ @keyframes blink {
+     0% {
+         color: red;
+     }
+
+     100% {
+         color: black;
+     }
+}
+
+ .updates {
+     text-align: center;
+     animation: blink 2s infinite;
+ }
