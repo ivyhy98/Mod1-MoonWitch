@@ -32,13 +32,13 @@ export class Player {
   getImage() {
     switch (this.element) {
       case "fire":
-        return (this.image.src = "../images/FireHero/fire-hero.png");
+        return (this.image.src = "./images/FireHero/fire-hero.png");
       case "water":
-        return (this.image.src = "../images/WaterHero/water-hero.png");
+        return (this.image.src = "./images/WaterHero/water-hero.png");
       case "earth":
-        return (this.image.src = "../images/EarthHero/earth-hero.png");
+        return (this.image.src = "./images/EarthHero/earth-hero.png");
       case "metal":
-        return (this.image.src = "../images/MetalHero/metal-hero.png");
+        return (this.image.src = "./images/MetalHero/metal-hero.png");
     }
   }
   update() {

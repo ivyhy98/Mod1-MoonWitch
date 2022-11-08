@@ -8,7 +8,7 @@ export const level1 = {
   start(ctx){
     game.currentLevel = game.levels[0];
     let background = new Image();
-    background.src = './images/backgrounds/firstBackground.png' 
+    background.src = '/images/backgrounds/firstBackground.png' 
     this.drawText(ctx);
     function animate(){
       if(game.currentLevel == level1){
@@ -44,7 +44,7 @@ export const level1 = {
 // ======LEVEL 2 =====
 
 export const level2 = {
-  background: "./images/backgrounds/secondBackground.png",
+  background: "/images/backgrounds/secondBackground.png",
   battleEnded: false,
   start: function (ctx) {
     const image = new Image();
@@ -191,8 +191,8 @@ export const level3 = {
     if(i===7){
       game.player.enemies.push(this.enemy),
       this.enemy.battleStart = 0;
-    }else if(i===10){
       stranger.exit = true;
+    }else if(i===10){
       game.player.inBattle = true;
       this.enemy.battleStart = 1;
       game.updates.textContent = "Defeat the Wizard";

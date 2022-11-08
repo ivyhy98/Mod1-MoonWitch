@@ -101,7 +101,7 @@ export class Skeleton extends Enemy {
     this.height = 608 / 4;
     this.health = 300;
     this.index = index;
-    this.image.src = "../images/enemies/skeleton.png";
+    this.image.src = "./images/enemies/skeleton.png";
     //spawn at a random location within the range of 700 to 500 feet
     this.position = {
       x: Math.floor(Math.random() * (700 - 500) + 500),
@@ -135,7 +135,7 @@ export class Wizard extends Enemy {
     this.height = 608 / 4;
     this.width = 1202 / 8;
     this.image = new Image();
-    this.image.src = "../images/Enemies/Wizard.png";
+    this.image.src = "./images/Enemies/Wizard.png";
     this.frameY = 1;
     this.frameX = 0;
     this.states = [
@@ -236,9 +236,9 @@ export const stranger = {
   },
   getImage(num) {
     if (!num) {
-      this.image.src = "../images/ninjaR.png";
+      this.image.src = "./images/ninjaR.png";
     } else {
-      this.image.src = "../images/ninjaL.png";
+      this.image.src = "./images/ninjaL.png";
     }
   },
 };
