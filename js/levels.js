@@ -8,9 +8,8 @@ export const level1 = {
   start(ctx){
     game.currentLevel = game.levels[0];
     let background = new Image();
-    background.src = '../images/backgrounds/firstBackground.png' 
+    background.src = './images/backgrounds/firstBackground.png' 
     this.drawText(ctx);
-
     function animate(){
       if(game.currentLevel == level1){
         ctx.clearRect(0,0,canvas1.width, canvas1.height);
