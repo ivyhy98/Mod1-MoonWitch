@@ -10,16 +10,11 @@ const canvas1 = document.querySelector('#canvas1');
 const canvasText = document.querySelector('#canvas-text');
 const submitButton = document.querySelector('button');
 const updates = document.querySelector('.updates');
-//const loadScreen = document.querySelector('.load-screen');
 const text = document.querySelector('.text');
 const startOver = document.querySelector("#start-over");
 const restart = document.querySelector("#restart");
 const deathScreen = document.querySelector(".death-screen");
 const gameBoard = document.querySelector('.game-board');
-
-let playerName;
-let playerCharacter;
-let x = 0;
 
 
 export const game ={
@@ -59,10 +54,12 @@ function validateHero(){
         form.elements['hero-name'].style.backgroundColor = 'red';
 
     } else{
-        game.start(form.elements['hero-name'].value , form.elements['hero-player'].value);
+        
+        window.addEventListener('load', game.start(form.elements['hero-name'].value , form.elements['hero-player'].value));
     }
 }
 
+//Death Screen button event listeners
 startOver.addEventListener('click',()=>{
     homeScreen.classList.remove('hide');
     gameBoard.classList.add('hide');

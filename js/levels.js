@@ -11,7 +11,7 @@ export const level1 = {
     background.src = '/images/backgrounds/firstBackground.png' 
     this.drawText(ctx);
     function animate(){
-      if(game.currentLevel == level1){
+      if(game.currentLevel == level1){    //if statement because without it all levels run at the same time and slows game down
         ctx.clearRect(0,0,canvas1.width, canvas1.height);
         ctx.drawImage(background,0,0);
         if(game.player.position.x >=450){
@@ -268,7 +268,7 @@ export const level4 = {
     gameBoard.classList.add('hide');
   }
 };
-
+//start over when game ends
 startOver.addEventListener('click', ()=>{
   homeScreen.classList.remove("hide");
   gameBoard.classList.add("hide");

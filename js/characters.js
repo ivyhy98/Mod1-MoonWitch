@@ -6,7 +6,7 @@ export class Enemy {
     this.name = "";
     this.battleStart = 2;
     this.health;
-    this.position = { x: Math.random() * (600 - 300 + 300), y: 275 };
+    this.position = { x: Math.random() * (600 - 300 + 300), y: 275 };  //random position off screen
     this.height;
     this.width;
     this.image = new Image();
@@ -215,10 +215,10 @@ export const stranger = {
     } else if(this.exit == false && game.player.inBattle == false){
         this.currentState = this.states[0];
     }
-    if (this.exit == true && this.position.x >= game.player.position.x) {
+    if (this.exit == true && this.position.x >= game.player.position.x - 200) {
       this.currentState = this.states[1];
       this.position.x--;
-    } else if (this.exit == true && game.player.inBattle == false) {
+    } else if (this.exit == true && game.player.inBattle == false && this.position.x <= game.player.position.x) {
       this.currentState = this.states[1];
       this.position.x+=2;
     }

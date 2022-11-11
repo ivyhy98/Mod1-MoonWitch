@@ -42,11 +42,13 @@ export class Player {
     }
   }
   update() {
+    //If you are done with a level start the next
     if(this.position.x >= 450 && !this.inBattle){
       game.currentLevel.start(ctx)
     }
     switch (game.inputs.pressed[0]) {
       case undefined:
+        //no key being pressed
         this.currentState = this.states[0];
         break;
       case "ArrowLeft":

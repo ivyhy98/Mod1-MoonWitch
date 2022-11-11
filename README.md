@@ -2,8 +2,9 @@
 Moonwitch the Game is an RPG/ Story telling game based on an unpopular book called Moon Witch.
 Summary:
 Tonight is the night you are running away from the place that has raised you since birth in order to find adventure. 
-Being raised in such a place leaves you vulnerable to night creatures and rogues as you soon find outwhy no one ever leaves the Purple Reign. 
-[MoonWitch](./images/MoonWitch.png)
+Being raised in such a place leaves you vulnerable to night creatures and rogues as you soon find out why no one ever leaves the Purple Reign. 
+Visit the Purple Reign in
+[MoonWitch](https://ivyhy98.github.io/Mod1-MoonWitch/)
 # Technologies Used
 This game implements HTML, CSS and Javascript
 
